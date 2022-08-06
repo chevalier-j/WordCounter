@@ -22,7 +22,7 @@ class WordCounterTests: XCTestCase {
     func testAllWordsLoaded() {
         // this test needs to be updated once functionality to select custom text files is added
         let wordData = WordData()
-        XCTAssertEqual(wordData.allWords.count, 18440, "allWords was not 18440, instead was \(wordData.allWords.count)")
+        XCTAssertEqual(wordData.allWords.count, 18441, "allWords should be 18441")
     }
     
     func testWordCountsAreCorrect() {
