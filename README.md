@@ -1,6 +1,6 @@
 # WordCounter
 
-iOS application that takes input from a text file and counts its words.
+iOS application that takes input from a text file and counts the number of words inside it using filters.
 
 #Test Driven Development
 
