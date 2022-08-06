@@ -9,13 +9,15 @@ import Foundation
 
 class WordData {
     var allWords = [String]()
+    // dictionary to store words and their frequency
+    var wordCounts = [String: Int]()
     
     // splits a string by any number of characters. Splits on . ? ! " etc.
     init() {
         if let path = Bundle.main.path(forResource: "plays", ofType: "txt") {
-            if let plays = try? String(contentsOfFile: path) {
+            if let words = try? String(contentsOfFile: path) {
                 // might be better off using CharacterSet(charactersIn:) ??? more customisable
-                allWords = plays.components(separatedBy: CharacterSet.alphanumerics.inverted)
+                allWords = words.components(separatedBy: CharacterSet.alphanumerics.inverted)
 
                 // .filter takes a closure as parameter
 //                allWords = allWords.filter({ (testString: String) -> Bool in
@@ -30,6 +32,12 @@ class WordData {
                 allWords = allWords.filter { $0 != ""}
                 
                 
+                for word in allWords {
+                    wordCounts[word, default: 0] += 1
+                }
+                // new array with all duplicates removed (thanks to above dictionary)
+//                allWords = Array(wordCounts.keys)
+
             }
         }
     }
