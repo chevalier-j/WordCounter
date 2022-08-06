@@ -16,6 +16,7 @@
 		744616EF289E2E5E00CC22F7 /* WordCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744616EE289E2E5E00CC22F7 /* WordCounterTests.swift */; };
 		744616F9289E2E5E00CC22F7 /* WordCounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744616F8289E2E5E00CC22F7 /* WordCounterUITests.swift */; };
 		744616FB289E2E5E00CC22F7 /* WordCounterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744616FA289E2E5E00CC22F7 /* WordCounterUITestsLaunchTests.swift */; };
+		74461708289E2FCE00CC22F7 /* plays.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74461707289E2FCE00CC22F7 /* plays.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		744616F4289E2E5E00CC22F7 /* WordCounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordCounterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		744616F8289E2E5E00CC22F7 /* WordCounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCounterUITests.swift; sourceTree = "<group>"; };
 		744616FA289E2E5E00CC22F7 /* WordCounterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCounterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		74461707289E2FCE00CC22F7 /* plays.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = plays.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		744616D6289E2E5B00CC22F7 /* WordCounter */ = {
 			isa = PBXGroup;
 			children = (
+				74461707289E2FCE00CC22F7 /* plays.txt */,
 				744616D7289E2E5B00CC22F7 /* AppDelegate.swift */,
 				744616D9289E2E5B00CC22F7 /* SceneDelegate.swift */,
 				744616DB289E2E5B00CC22F7 /* ViewController.swift */,
@@ -231,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74461708289E2FCE00CC22F7 /* plays.txt in Resources */,
 				744616E4289E2E5D00CC22F7 /* LaunchScreen.storyboard in Resources */,
 				744616E1289E2E5D00CC22F7 /* Assets.xcassets in Resources */,
 				744616DF289E2E5B00CC22F7 /* Main.storyboard in Resources */,
