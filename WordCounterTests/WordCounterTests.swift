@@ -27,9 +27,9 @@ class WordCounterTests: XCTestCase {
     
     func testWordCountsAreCorrect() {
         let wordData = WordData()
-        XCTAssertEqual(wordData.wordCounts["sweet"], 340, "\"Sweet\" does not appear 340 times")
-        XCTAssertEqual(wordData.wordCounts["had"], 608, "\"Had\" does not appear 608 times")
-        XCTAssertEqual(wordData.wordCounts["a"], 6122, "\"A\" does not appear 6122 times")
+        XCTAssertEqual(wordData.wordCounts.count(for: "sweet"), 340, "\"Sweet\" does not appear 340 times")
+        XCTAssertEqual(wordData.wordCounts.count(for: "had"), 608, "\"Had\" does not appear 608 times")
+        XCTAssertEqual(wordData.wordCounts.count(for: "a"), 6122, "\"A\" does not appear 6122 times")
     }
     
     // tests performance by loading a new WordData object to _ and split up by lines and count the words, 10 times.

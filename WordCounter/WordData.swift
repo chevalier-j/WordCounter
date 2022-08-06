@@ -9,8 +9,8 @@ import Foundation
 
 class WordData {
     var allWords = [String]()
-    // dictionary to store words and their frequency
-    var wordCounts = [String: Int]()
+    // specialised Set that keeps track of how many times an item tried to be added or removed, so it gets rid of duplicates and counts frequency
+    var wordCounts = NSCountedSet()
     
     // splits a string by any number of characters. Splits on . ? ! " etc.
     init() {
@@ -29,15 +29,22 @@ class WordData {
 //                })
                 
                 // "high order function" with shorthand parameter names simplifying above process:
-                allWords = allWords.filter { $0 != ""}
+//                allWords = allWords.filter { $0 != ""}
                 
                 
-                for word in allWords {
-                    wordCounts[word, default: 0] += 1
-                }
-                // new array from dictionary keys. Removes all duplicate words
-                allWords = Array(wordCounts.keys)
+//                for word in allWords {
+//                    wordCounts[word, default: 0] += 1
+//                }
+//                // new array from dictionary keys. Removes all duplicate words
+//                allWords = Array(wordCounts.keys)
 
+                
+                // creates counted set from all the words: counts and removes duplicates
+                wordCounts = NSCountedSet(array: allWords)
+                // update allWords array with de-duplicated results from counted set
+                allWords = wordCounts.allObjects as! [String]
+                
+                
             }
         }
     }
