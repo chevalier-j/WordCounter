@@ -16,6 +16,20 @@ class WordData {
             if let plays = try? String(contentsOfFile: path) {
                 // might be better off using CharacterSet(charactersIn:) ??? more customisable
                 allWords = plays.components(separatedBy: CharacterSet.alphanumerics.inverted)
+
+                // .filter takes a closure as parameter
+//                allWords = allWords.filter({ (testString: String) -> Bool in
+//                    if testString != "" {
+//                        return true
+//                    } else {
+//                        return false
+//                    }
+//                })
+                
+                // "high order function" with shorthand parameter names simplifying above process:
+                allWords = allWords.filter { $0 != ""}
+                
+                
             }
         }
     }
