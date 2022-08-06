@@ -17,6 +17,7 @@
 		744616F9289E2E5E00CC22F7 /* WordCounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744616F8289E2E5E00CC22F7 /* WordCounterUITests.swift */; };
 		744616FB289E2E5E00CC22F7 /* WordCounterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744616FA289E2E5E00CC22F7 /* WordCounterUITestsLaunchTests.swift */; };
 		74461708289E2FCE00CC22F7 /* plays.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74461707289E2FCE00CC22F7 /* plays.txt */; };
+		7446170A289E347800CC22F7 /* WordData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74461709289E347800CC22F7 /* WordData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		744616F8289E2E5E00CC22F7 /* WordCounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCounterUITests.swift; sourceTree = "<group>"; };
 		744616FA289E2E5E00CC22F7 /* WordCounterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCounterUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		74461707289E2FCE00CC22F7 /* plays.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = plays.txt; sourceTree = "<group>"; };
+		74461709289E347800CC22F7 /* WordData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				744616D9289E2E5B00CC22F7 /* SceneDelegate.swift */,
 				744616DB289E2E5B00CC22F7 /* ViewController.swift */,
 				744616DD289E2E5B00CC22F7 /* Main.storyboard */,
+				74461709289E347800CC22F7 /* WordData.swift */,
 				744616E0289E2E5D00CC22F7 /* Assets.xcassets */,
 				744616E2289E2E5D00CC22F7 /* LaunchScreen.storyboard */,
 				744616E5289E2E5D00CC22F7 /* Info.plist */,
@@ -265,6 +268,7 @@
 				744616DC289E2E5B00CC22F7 /* ViewController.swift in Sources */,
 				744616D8289E2E5B00CC22F7 /* AppDelegate.swift in Sources */,
 				744616DA289E2E5B00CC22F7 /* SceneDelegate.swift in Sources */,
+				7446170A289E347800CC22F7 /* WordData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
