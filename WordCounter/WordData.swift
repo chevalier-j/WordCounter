@@ -56,7 +56,14 @@ class WordData {
     }// end init
     
     func applyUserFilter(_ input: String) {
-        // skeleton
+        // find out if string contains integer:
+        if let userNumber = Int(input) {
+            // create array of words with count >= to the user input, and used when user text input is parsed as int
+            filteredWords = allWords.filter { self.wordCounts.count(for: $0) >= userNumber }
+        } else {
+            // create array of words that contain the user text as substring, to be used when input is not int
+            filteredWords = allWords.filter { $0.range(of: input, options: .caseInsensitive) != nil }
+        }
+        
     }
-    
 }
