@@ -12,7 +12,10 @@ class WordData {
     // specialised Set that keeps track of how many times an item tried to be added or removed, so it gets rid of duplicates and counts frequency
     var wordCounts = NSCountedSet()
     
-    // splits a string by any number of characters. Splits on . ? ! " etc.
+    var filteredWords = [String]()
+
+    
+    // method that splits a string by any number of characters. Splits on . ? ! " etc.
     init() {
         if let path = Bundle.main.path(forResource: "plays", ofType: "txt") {
             if let words = try? String(contentsOfFile: path) {
@@ -48,8 +51,12 @@ class WordData {
                 wordCounts = NSCountedSet(array: allWords)
                 let sorted = wordCounts.allObjects.sorted { wordCounts.count(for: $0) > wordCounts.count(for: $1) }
                 allWords = sorted as! [String]
-                
             }
         }
+    }// end init
+    
+    func applyUserFilter(_ input: String) {
+        // skeleton
     }
+    
 }
