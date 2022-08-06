@@ -19,12 +19,12 @@ class WordCounterTests: XCTestCase {
     }
     
     // tests:
-    
     func testAllWordsLoaded() {
         // this test needs to be updated once functionality to select custom text files is added
         let wordData = WordData()
         XCTAssertEqual(wordData.allWords.count, 18440, "allWords was not 18440, instead was \(wordData.allWords.count)")
     }
+    
     func testWordCountsAreCorrect() {
         let wordData = WordData()
         XCTAssertEqual(wordData.wordCounts["sweet"], 340, "\"Sweet\" does not appear 340 times")
@@ -32,7 +32,12 @@ class WordCounterTests: XCTestCase {
         XCTAssertEqual(wordData.wordCounts["a"], 6122, "\"A\" does not appear 6122 times")
     }
     
-    
+    // tests performance by loading a new WordData object to _ and split up by lines and count the words, 10 times.
+    func testWordsLoadQuickly() {
+        measure {
+            _ = WordData()
+        }
+    }
     
     
     
