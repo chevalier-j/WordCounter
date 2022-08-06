@@ -9,11 +9,27 @@ import UIKit
 
 class ViewController: UITableViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    var wordData = WordData()
+
+    
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return wordData.allWords.count
     }
 
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
+        let word = wordData.allWords[indexPath.row]
+        cell.textLabel!.text = word
+        return cell
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+    }
 }
 
