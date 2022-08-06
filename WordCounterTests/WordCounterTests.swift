@@ -25,7 +25,12 @@ class WordCounterTests: XCTestCase {
         let wordData = WordData()
         XCTAssertEqual(wordData.allWords.count, 18440, "allWords was not 18440, instead was \(wordData.allWords.count)")
     }
-    
+    func testWordCountsAreCorrect() {
+        let wordData = WordData()
+        XCTAssertEqual(wordData.wordCounts["sweet"], 340, "\"Sweet\" does not appear 340 times")
+        XCTAssertEqual(wordData.wordCounts["had"], 608, "\"Had\" does not appear 608 times")
+        XCTAssertEqual(wordData.wordCounts["a"], 6122, "\"A\" does not appear 6122 times")
+    }
     
     
     

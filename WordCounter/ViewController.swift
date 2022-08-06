@@ -22,6 +22,8 @@ class ViewController: UITableViewController {
 
         let word = wordData.allWords[indexPath.row]
         cell.textLabel!.text = word
+        // replaces "detail" text label in table for word count
+        cell.detailTextLabel!.text = "\(wordData.wordCounts[word]!)"
         return cell
     }
     
