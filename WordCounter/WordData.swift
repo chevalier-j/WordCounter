@@ -35,8 +35,8 @@ class WordData {
                 for word in allWords {
                     wordCounts[word, default: 0] += 1
                 }
-                // new array with all duplicates removed (thanks to above dictionary)
-//                allWords = Array(wordCounts.keys)
+                // new array from dictionary keys. Removes all duplicate words
+                allWords = Array(wordCounts.keys)
 
             }
         }
