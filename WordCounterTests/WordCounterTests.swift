@@ -42,24 +42,31 @@ class WordCounterTests: XCTestCase {
     func testUserFilterWorks() {
         let wordData = WordData()
 
+        wordData.applyUserFilter("  ")
+        XCTAssertEqual(wordData.filteredWords.count, 0)
+        
+        wordData.applyUserFilter("cowabunga")
+        XCTAssertEqual(wordData.filteredWords.count, 0)
+        
         wordData.applyUserFilter("100")
-        XCTAssertEqual(wordData.filteredWords.count, 495)
+        XCTAssertEqual(wordData.filteredWords.count, 496)
 
         wordData.applyUserFilter("1000")
-        XCTAssertEqual(wordData.filteredWords.count, 55)
-
+        XCTAssertEqual(wordData.filteredWords.count, 56)
         wordData.applyUserFilter("10000")
-        XCTAssertEqual(wordData.filteredWords.count, 1)
+        XCTAssertEqual(wordData.filteredWords.count, 2)
 
-        wordData.applyUserFilter("set")
-        XCTAssertEqual(wordData.filteredWords.count, 137)
+        wordData.applyUserFilter("test")
+        XCTAssertEqual(wordData.filteredWords.count, 56)
 
-        wordData.applyUserFilter("the")
-        XCTAssertEqual(wordData.filteredWords.count, 9859)
-
-        wordData.applyUserFilter("vegemite")
+        wordData.applyUserFilter("swift")
+        XCTAssertEqual(wordData.filteredWords.count, 7)
+        
+        wordData.applyUserFilter("cowabunga")
         XCTAssertEqual(wordData.filteredWords.count, 0)
-    } // end testUserFilterWorks
+
+
+    } // testUserFilterWorks
     
     
     
@@ -75,4 +82,5 @@ class WordCounterTests: XCTestCase {
 //    override func tearDownWithError() throws {
 //        // Put teardown code here. This method is called after the invocation of each test method in the class.
 //    }
+
 }

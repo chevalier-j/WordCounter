@@ -12,7 +12,8 @@ class WordData {
     // specialised Set that keeps track of how many times an item tried to be added or removed, so it gets rid of duplicates and counts frequency
     var wordCounts = NSCountedSet()
     
-    var filteredWords = [String]()
+    // as private, only WordData can write filteredWords, increasing safety by forcing the use of applyUserFilter and applyFilter methods
+    private(set) var filteredWords = [String]()
 
     
     // method that splits a string by any number of characters. Splits on . ? ! " etc.
@@ -55,15 +56,21 @@ class WordData {
         }
     }// end init
     
+    
+    // method that determines if input from user is an int or a string
     func applyUserFilter(_ input: String) {
-        // find out if string contains integer:
         if let userNumber = Int(input) {
-            // create array of words with count >= to the user input, and used when user text input is parsed as int
-            filteredWords = allWords.filter { self.wordCounts.count(for: $0) >= userNumber }
+            // if input parsed as int, creates an array out of words with a count >= that user input
+            applyFilter { self.wordCounts.count(for: $0) >= userNumber }
         } else {
-            // create array of words that contain the user text as substring, to be used when input is not int
-            filteredWords = allWords.filter { $0.range(of: input, options: .caseInsensitive) != nil }
+            // when input is not int, creates array of words that contain the user input text as a substring
+            applyFilter { $0.range(of: input, options: .caseInsensitive) != nil }
         }
-        
+    
+    } //  applyUserFilter
+    
+    // method that takes accepts a func as paramenter. Func must be single string parameter and returns true/false depending if it should be added to filteredWords array or not
+    func applyFilter(_ filter: (String) -> Bool) {
+        filteredWords = allWords.filter(filter)
     }
 }
