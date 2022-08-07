@@ -40,7 +40,7 @@ class WordCounterUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         let table = XCUIApplication().tables
-        XCTAssertEqual(table.cells.count, 7, "There should be 7 rows")
+        XCTAssertEqual(table.cells.count, 56, "There should be 56 rows")
     }
 
     
@@ -56,7 +56,7 @@ class WordCounterUITests: XCTestCase {
 
         filterAlert.buttons["Filter"].tap()
 
-        XCTAssertEqual(app.tables.cells.count, 56, "There should be 56 words matching 'test'")
+        XCTAssertEqual(app.tables.cells.count, 56, "'Test' should provide 56 rows as result")
     }
 
     

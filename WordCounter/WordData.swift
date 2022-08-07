@@ -55,7 +55,7 @@ class WordData {
             }
         }
         // test
-        applyUserFilter("swift")
+        applyUserFilter("test")
 //        applyUserFilter("ised")
 
 

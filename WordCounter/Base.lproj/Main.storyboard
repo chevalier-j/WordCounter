@@ -52,10 +52,10 @@
             </objects>
             <point key="canvasLocation" x="602.89855072463774" y="-30.133928571428569"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Word Counter-->
         <scene sceneID="IqW-9q-xGS">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6rm-dI-sLs" sceneMemberID="viewController">
+                <navigationController title="Word Counter" automaticallyAdjustsScrollViewInsets="NO" id="6rm-dI-sLs" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hR1-yX-dG0">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
