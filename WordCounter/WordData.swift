@@ -54,6 +54,11 @@ class WordData {
                 allWords = sorted as! [String]
             }
         }
+        // test
+        applyUserFilter("swift")
+//        applyUserFilter("ised")
+
+
     }// end init
     
     
