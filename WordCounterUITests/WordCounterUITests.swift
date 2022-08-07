@@ -42,49 +42,22 @@ class WordCounterUITests: XCTestCase {
         let table = XCUIApplication().tables
         XCTAssertEqual(table.cells.count, 7, "There should be 7 rows")
     }
+
     
-    func testNavigationBarButtons() {
-        // test search, filter and cancel buttons
+    func testUserFilteringString() {
+        // test buttons, filter with string "test". Assert that result is 56
         let app = XCUIApplication()
         app.launch()
-        let searchButton = app.navigationBars["Word Counter"].buttons["Search"]
-        searchButton.tap()
-        
-        let elementsQuery = app.alerts["Filter…"].scrollViews.otherElements
-        elementsQuery.buttons["Filter"].tap()
-        searchButton.tap()
-        elementsQuery.buttons["Cancel"].tap()
-        
+        app.navigationBars["Word Counter"].buttons["Search"].tap()
+        let filterAlert = app.alerts["Filter…"]
+//        filterAlert.collectionViews.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element(boundBy: 1).children(matching: .textField).element.typeText("test")
+        let textField = filterAlert.textFields.element
+        textField.typeText("test")
+
+        filterAlert.buttons["Filter"].tap()
+
+        XCTAssertEqual(app.tables.cells.count, 56, "There should be 56 words matching 'test'")
     }
-    
-    // ui test recorder filter test is broken
-//    func testUserFilteringByString() {
-////        app.keys["t"].tap()
-////        app.keys["e"].tap()
-////        app.keys["s"].tap()
-////        app.keys["t"].tap()
-//
-//        let app = XCUIApplication()
-//        app.launch()
-//        app.navigationBars["Word Counter"].buttons["Search"].tap()
-//
-//        let tKey = app/*@START_MENU_TOKEN@*/.keys["t"]/*[[".keyboards.keys[\"t\"]",".keys[\"t\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-//        tKey.tap()
-//        tKey.tap()
-//
-//        let eKey = app/*@START_MENU_TOKEN@*/.keys["e"]/*[[".keyboards.keys[\"e\"]",".keys[\"e\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-//        eKey.tap()
-//        eKey.tap()
-//
-//        let sKey = app/*@START_MENU_TOKEN@*/.keys["s"]/*[[".keyboards.keys[\"s\"]",".keys[\"s\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-//        sKey.tap()
-//        sKey.tap()
-//        tKey.tap()
-//        tKey.tap()
-//        app.alerts["Filter…"].scrollViews.otherElements.buttons["Filter"].tap()
-//
-//
-//    }
 
     
 //    func testExample() throws {
