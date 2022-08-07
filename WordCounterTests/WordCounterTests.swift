@@ -18,9 +18,7 @@ class WordCounterTests: XCTestCase {
         super.tearDown()
     }
     
-    // tests:
     func testAllWordsLoaded() {
-        // this test needs to be updated once functionality to select custom text files is added
         let wordData = WordData()
         XCTAssertEqual(wordData.allWords.count, 18441, "allWords should be 18441")
     }
@@ -64,17 +62,10 @@ class WordCounterTests: XCTestCase {
         
         wordData.applyUserFilter("cowabunga")
         XCTAssertEqual(wordData.filteredWords.count, 0)
-
-
     } // testUserFilterWorks
     
     
-    
-    
-    
-    
-    
-    
+    // unused
 //    override func setUpWithError() throws {
 //        // Put setup code here. This method is called before the invocation of each test method in the class.
 //    }
